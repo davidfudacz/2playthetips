@@ -1,0 +1,1 @@
+export const clubbUrl = 'https://clubb-courses-api.herokuapp.com'
