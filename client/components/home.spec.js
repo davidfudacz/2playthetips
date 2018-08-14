@@ -13,7 +13,7 @@ describe('Home', () => {
   let home
 
   beforeEach(() => {
-    home = shallow(<Home email="cody@email.com" />)
+    home = shallow(<Home email="cody@email.com" courses={[]} />)
   })
 
   it('renders the email in an h3', () => {
