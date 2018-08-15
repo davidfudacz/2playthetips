@@ -6,10 +6,9 @@ const { clubbUrl } = require('../urls')
 router.get('/', async (req, res, next) => {
   try {
     const courseRatings = await courseRating.findAll()
-    console.log('ratings------------',courseRatings)
     const outputCourseRatings = await courseRatings.map(async rating => {
       try {
-        const courseInfo = await axios.get(`${clubbUrl}/api/courses/${rating.clubbCourseId}`)
+        const courseInfo = await axios.get(`${clubbUrl}/api/courses/${rating.clubbCourseId}?include=club`)
         rating.dataValues.course = courseInfo.data
         return rating
       }
@@ -19,7 +18,6 @@ router.get('/', async (req, res, next) => {
 
     })
     const output = await Promise.all(outputCourseRatings)
-    console.log('output--------------',output)
     res.json(output)
   }
   catch (err) {
