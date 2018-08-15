@@ -1,7 +1,8 @@
 'use strict'
 
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const { User } = require('../server/db/models')
+const { seedCourseRatings } = require('./seeds')
 
 async function seed() {
   await db.sync({force: true})
@@ -13,7 +14,11 @@ async function seed() {
   ])
 
   console.log(`seeded ${users.length} users`)
+
+  await seedCourseRatings()
+
   console.log(`seeded successfully`)
+
 }
 
 // We've separated the `seed` function from the `runSeed` function.
