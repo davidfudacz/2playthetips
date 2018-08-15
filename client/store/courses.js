@@ -12,6 +12,7 @@ export const getAllCoursesFromApiThunkerator = () =>
   async dispatch => {
     try {
       const courses = await axios.get(`${clubbUrl}/api/courses`)
+      console.log(courses)
       dispatch(getAllCoursesFromApi(courses.data))
     }
     catch (err) {

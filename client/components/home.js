@@ -1,19 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { CourseRatings } from '../components'
 
 /**
  * COMPONENT
  */
 export const Home = props => {
-  const {email, courses} = props
+  const {email} = props
 
   return (
     <div>
       <h3>Welcome, {email}</h3>
-      {
-        courses.map(course => <p key={course.id}>{course.club.name}</p>)
-      }
+      <CourseRatings />
     </div>
   )
 }
@@ -21,9 +20,8 @@ export const Home = props => {
 /**
  * CONTAINER
  */
-const mapState = ({user, courses}) => ({
+const mapState = ({user}) => ({
     email: user.email,
-    courses,
   })
 
 export default connect(mapState)(Home)
@@ -32,5 +30,5 @@ export default connect(mapState)(Home)
  * PROP TYPES
  */
 Home.propTypes = {
-  email: PropTypes.string
+  email: PropTypes.string,
 }
