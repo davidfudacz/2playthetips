@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {withRouter, Route, Switch} from 'react-router-dom'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { withRouter, Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, Home} from './components'
-import {me, getAllCourseRatingsFromServerThunkerator} from './store'
+import { Login, Signup, Home } from './components'
+import { me, getAllCourseRatingsFromServerThunkerator } from './store'
 
 /**
  * COMPONENT
@@ -25,11 +25,11 @@ class Routes extends Component {
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
-            <Route path="/home" component={Home} />
+            <Route path="/admin" component={Home} />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
-        <Route component={Login} />
+        <Route component={Home} />
       </Switch>
     )
   }
