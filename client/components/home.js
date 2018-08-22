@@ -1,18 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { CourseRatings } from '../components'
+import { CourseRatingsMain } from '../components'
+import { defaultBorder } from '../styles'
+
+const mainPanelStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  flex: '4',
+  height: '800px',
+}
 
 /**
  * COMPONENT
  */
-export const Home = props => {
-  const {email} = props
+export const Home = () => {
 
   return (
-    <div>
-      <h3>Welcome, {email}</h3>
-      <CourseRatings />
+    <div style={ mainPanelStyle }>
+      <CourseRatingsMain />
     </div>
   )
 }

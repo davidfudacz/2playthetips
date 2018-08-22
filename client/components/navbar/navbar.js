@@ -13,10 +13,9 @@ const navStyle = {
 
 const Navbar = () => (
   <div style={navStyle}>
-    <NavbarLink style={{color: 'red'}} to="/home">Home</NavbarLink>
-    <NavbarLink to="/home">Reviews</NavbarLink>
-    <NavbarLink to="/home">Top 100s</NavbarLink>
-    <NavbarLink to="/home">About</NavbarLink>
+    <NavbarLink to="/">Home</NavbarLink>
+    <NavbarLink to="/">Reviews</NavbarLink>
+    <NavbarLink to="/">About</NavbarLink>
   </div>
 )
 

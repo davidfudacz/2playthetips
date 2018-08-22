@@ -6,4 +6,4 @@
 export { Navbar } from './navbar'
 export { default as Home } from './home'
 export { Login, Signup } from './auth-form'
-export { default as CourseRatings } from './course-ratings'
+export { CourseRatingsMain } from './course-ratings'
