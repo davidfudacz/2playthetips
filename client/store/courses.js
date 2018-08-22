@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { clubbUrl } from '../utils'
+import { clubbUrl } from '../urls'
 
 const GET_ALL_COURSES_FROM_API = 'GET_ALL_COURSES_FROM_API'
 

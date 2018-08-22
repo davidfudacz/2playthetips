@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { _parseCourseNameForDisplay } from '../utilities'
 
 /**
  * COMPONENT
@@ -11,7 +12,7 @@ const CourseRatings = props => {
   return (
     <div>
       {
-        courseRatings.map(courseRating => <p key={courseRating.id}>{courseRating.clubbCourseId}</p>)
+        courseRatings.map(courseRating => <p key={courseRating.id}>{_parseCourseNameForDisplay(courseRating.course)} - {courseRating.total}</p>)
       }
     </div>
   )
