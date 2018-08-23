@@ -10,12 +10,13 @@ import {
 const navbarLinkStyle = {
   ...flexBoxJustifiedAndAlignedCenter,
   textDecoration: 'none',
+  width: '150px',
   color: secondaryColor,
 }
 
 const NavbarLink = ({ to, children }) => {
   return (
-    <Link to={to} style={ navbarLinkStyle }>
+    <Link to={ to } style={ navbarLinkStyle }>
       {
         children
       }

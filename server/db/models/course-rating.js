@@ -98,7 +98,7 @@ const courseRating = db.define('courseRating',{
         this.getDataValue('omg') +
         this.getDataValue('design')
       const avg = (sum / 7) / 10
-      return Math.round(avg * 10) / 10
+      return Math.round(avg * 100) / 100
     },
   },
 })

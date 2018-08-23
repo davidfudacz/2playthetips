@@ -1,18 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { CourseRatings } from '../components'
+import { AllCoursesRankedByRating } from '../components'
+
+const mainPanelStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  flex: '2.5',
+  height: '800px',
+  paddingTop: '20px',
+  paddingRight: '10px',
+}
 
 /**
  * COMPONENT
  */
-export const Home = props => {
-  const {email} = props
+export const Home = () => {
 
   return (
-    <div>
-      <h3>Welcome, {email}</h3>
-      <CourseRatings />
+    <div className="mainPanel" style={ mainPanelStyle }>
+      <AllCoursesRankedByRating />
     </div>
   )
 }
@@ -25,10 +31,3 @@ const mapState = ({user}) => ({
   })
 
 export default connect(mapState)(Home)
-
-/**
- * PROP TYPES
- */
-Home.propTypes = {
-  email: PropTypes.string,
-}

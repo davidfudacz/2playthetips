@@ -3,6 +3,12 @@ body {
   margin: 0;
 }
 
+#main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 a {
   text-decoration: none;
 }
