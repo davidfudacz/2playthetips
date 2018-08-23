@@ -9,7 +9,7 @@ import {Home} from './home'
 const adapter = new Adapter()
 enzyme.configure({adapter})
 
-describe('Home', () => {
+describe.skip('Home', () => {
   let home
 
   beforeEach(() => {
