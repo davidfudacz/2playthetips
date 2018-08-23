@@ -1,1 +1,1 @@
-export { default as CourseRatingsMain } from './course-ratings-main.js'
+export { default as CourseRatings } from './course-ratings.js'

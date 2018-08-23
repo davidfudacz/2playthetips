@@ -12,7 +12,7 @@ const navStyle = {
 }
 
 const Navbar = () => (
-  <div style={navStyle}>
+  <div style={ navStyle }>
     <NavbarLink to="/">Home</NavbarLink>
     <NavbarLink to="/">Reviews</NavbarLink>
     <NavbarLink to="/">About</NavbarLink>

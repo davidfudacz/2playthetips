@@ -1,16 +1,19 @@
 import React from 'react' 
 import { connect } from 'react-redux'
-import { CourseRatingsMain } from './components'
+import { CourseRatings } from './components'
 
 const sidebarStyle = {
   display: 'flex',
   flexDirection: 'column',
+  flex: '1',
   height: '800px',
+  paddingTop: '20px',
+  paddingLeft: '10px',
 }
 
 const Sidebar = () => (
   <div className="sidebar" style={ sidebarStyle }>
-    <CourseRatingsMain />
+    <CourseRatings />
   </div>
 )
 

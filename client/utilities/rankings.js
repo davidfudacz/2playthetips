@@ -33,13 +33,5 @@ export const _parseRankingListUrl = (rankingListObj) => {
 }
 
 export const _sortRankingsByRank = (rankings) => {
-  return rankings.sort((a, b) => {
-    if (a.rank < b.rank) {
-      return -1;
-    }
-    if (a.rank > b.rank) {
-      return 1;
-    }
-    return 0;
-  })
+  return rankings.sort((a, b) => a.rank - b.rank)
 }
