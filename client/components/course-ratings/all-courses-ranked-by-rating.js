@@ -22,7 +22,7 @@ const MainRating = ({ courseRating, rank }) => (
 /**
  * COMPONENT
  */
-const CourseRatings = ({ courseRatings }) => (
+const AllCoursesRankedByRating = ({ courseRatings }) => (
   <div style={ style }>
     {
       _sortRatingsByTotal(courseRatings).map((courseRating, index) => <MainRating key={courseRating.id} courseRating={courseRating} rank={index + 1} />)
@@ -33,12 +33,12 @@ const CourseRatings = ({ courseRatings }) => (
 
 const mapState = ({ courseRatings }) => ({ courseRatings })
 
-export default connect(mapState)(CourseRatings)
+export default connect(mapState)(AllCoursesRankedByRating)
 
 /**
  * PROP TYPES
  */
-CourseRatings.propTypes = {
+AllCoursesRankedByRating.propTypes = {
   courseRatings: PropTypes.array
 }
 

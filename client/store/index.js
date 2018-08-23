@@ -5,11 +5,13 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import user from './user'
 import courses from './courses'
 import courseRatings from './course-ratings'
+import currentCourse from './current-course'
 
 const reducer = combineReducers({
   user,
   courses,
   courseRatings,
+  currentCourse,
 })
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
@@ -20,3 +22,4 @@ export default store
 export * from './user'
 export * from './courses'
 export * from './course-ratings'
+export * from './current-course'
