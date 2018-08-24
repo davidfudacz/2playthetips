@@ -1,10 +1,9 @@
 import React from 'react'
 
-import { Navbar } from './components'
+import { Navbar, Sidebar } from './components'
 import Routes from './routes'
-import Sidebar from './sidebar'
 
-const wrapperStyle = {
+const contentWrapperStyle = {
   display: 'flex',
   flexDirection: 'row',
   width: '80vw',
@@ -15,7 +14,7 @@ const App = () => {
   return (
     <div id="main">
       <Navbar />
-      <div className="mainWrapper" style={ wrapperStyle } >
+      <div className="contentWrapper" style={ contentWrapperStyle } >
         <Routes />
         <Sidebar />
       </div>

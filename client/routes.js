@@ -3,14 +3,13 @@ import { connect } from 'react-redux'
 import { withRouter, Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Login, Signup, Home } from './components'
-import { me, getAllCourseRatingsFromServerThunkerator, getCurrentCourseFromApiThunkerator } from './store'
+import { me, getAllCourseRatingsFromServerThunkerator, getSelectedCourseFromApiThunkerator } from './store'
 
 /**
  * COMPONENT
  */
 class Routes extends Component {
   componentDidMount() {
-    console.log('mount')
     this.props.loadInitialData()
   }
 
@@ -51,7 +50,7 @@ const mapDispatch = dispatch => {
     loadInitialData() {
       dispatch(me())
       dispatch(getAllCourseRatingsFromServerThunkerator())
-      dispatch(getCurrentCourseFromApiThunkerator(1))
+      dispatch(getSelectedCourseFromApiThunkerator(1))
     }
   }
 }
