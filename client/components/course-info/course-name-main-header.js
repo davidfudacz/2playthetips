@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import CourseNameMainHeaderBuildInfo from './course-name-main-header-build-info'
 
 import { defaultBorder, primaryColor } from '../../styles'
 import { _parseCourseNameForDisplay } from '../../utilities';
@@ -12,6 +13,7 @@ const style = {
   flexDirection: 'row',
   justifyContent: 'space-between',
   flexWrap: 'wrap',
+  alignItems: 'center',
 }
 
 const headerWrapper = {
@@ -30,19 +32,10 @@ const headerSubtextStyle = {
   fontSize: '.8rem',
 }
 
-const courseInfoStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-end',
-  color: primaryColor,
-  fontFamily: 'verdana',
-  fontSize: '.8rem',
-}
-
 /**
  * COMPONENT
  */
-const CourseNameMainHeader = ({ selectedCourse }) => {
+const CourseNameMainHeader = ({ selectedCourse, selectedCourseBuilds }) => {
   if (!selectedCourse.id) return null
   return (
     <div style={ style }>
@@ -51,20 +44,16 @@ const CourseNameMainHeader = ({ selectedCourse }) => {
           {_parseCourseNameForDisplay(selectedCourse)}
         </div>
         <div className="courseNameHeaderSubtext" style={ headerSubtextStyle }>
-          Chicago, IL
+          Chicago, IL - Private
         </div> 
       </div>
-      <div className="courseInfo" style={ courseInfoStyle }>
-        <div>Built: {selectedCourse.club.established}</div>
-        <div>Donald Ross</div>
-        <div>Private</div>
-      </div>
+        <CourseNameMainHeaderBuildInfo builds={selectedCourseBuilds} />
     </div>
   )
 }
 
 
-const mapState = ({ selectedCourse }) => ({ selectedCourse })
+const mapState = ({ selectedCourse, selectedCourseBuilds }) => ({ selectedCourse, selectedCourseBuilds })
 
 export default connect(mapState)(CourseNameMainHeader)
 

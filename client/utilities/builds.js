@@ -1,25 +1,23 @@
 import {
-  _parseArchitectName,
+  _parseMultipleArchitectNames,
 } from '../utilities'
 
-export const _parseBuildWordingForDisplay = (build) => {
-  const architectsParsedArr = build.architects.map(architect => _parseArchitectName(architect))
-  const architectsString = architectsParsedArr.join(' & ')
-  let output = ''
+export const _sortBuildsByYear = (build) => {
+  return build.sort((a, b) => a.year - b.year)
+}
+
+export const _parseBuildWordingForDisplay = (build, onlyLastNames) => {
+  const parsedArchitectsString = _parseMultipleArchitectNames(build.architects, onlyLastNames)
+  let output = `${parsedArchitectsString} - ${build.year}`
   switch (build.buildType) {
-    case 'original':
-      output += 'Designed by '
-      break
     case 'redesign':
-      output += 'Redesigned by '
+      output += ' (Redesign)'
       break
     case 'restoration':
-      output += 'Restored by '
+      output += ' (Restoration)'
       break
     default:
       output += ''
   }
-  output += architectsString
-  output += ` in ${build.year}`
   return output
 }

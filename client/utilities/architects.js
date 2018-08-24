@@ -1,5 +1,6 @@
 
-export const _parseArchitectName = (architect) => {
+export const _parseArchitectName = (architect, onlyLastName) => {
+  if (onlyLastName) return architect.surname
   return architect.givenName + ' ' + architect.surname
 }
 
@@ -15,4 +16,19 @@ export const _sortArchitectsAlphabetically = (architects) => {
     }
     return 0;
   })
+}
+
+export const _parseMultipleArchitectNames = (architects, onlyLastNames) => {
+  if (architects.length === 1) {
+    return _parseArchitectName(architects[0], onlyLastNames)
+  }
+  const sortedArchitects = _sortArchitectsAlphabetically(architects)
+  const architectsParsedArr = sortedArchitects.map(architect => _parseArchitectName(architect, onlyLastNames))
+  if (architects.length === 2) {
+    return architectsParsedArr.join(' & ')
+  }
+  if (architects.length > 2) {
+    const removedLastArchitect = architectsParsedArr.pop()
+    return architectsParsedArr.join(', ') + ` & ${removedLastArchitect}`
+  }
 }

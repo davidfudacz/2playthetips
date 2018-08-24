@@ -15,4 +15,5 @@ export const defaultBorder = {
   boxShadow: `1px 2px 4px ${primaryColor}`,
   background: secondaryColor,
   marginBottom: '20px',
+  borderRadius: '3px',
 }
