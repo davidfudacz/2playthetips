@@ -5,5 +5,6 @@
  */
 export { Navbar } from './navbar'
 export { default as Home } from './home'
-export { Login, Signup } from './auth-form'
-export { AllCoursesRankedByRating, CurrentCourseRatings } from './course-ratings'
+export * from './auth-form'
+export * from './course-ratings'
+export * from './course-info'

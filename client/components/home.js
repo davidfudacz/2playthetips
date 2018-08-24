@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { AllCoursesRankedByRating } from '../components'
+import { AllCoursesRankedByRating, CourseNameMainHeader } from '../components'
 
 const mainPanelStyle = {
   display: 'flex',
@@ -18,6 +18,7 @@ export const Home = () => {
 
   return (
     <div className="mainPanel" style={ mainPanelStyle }>
+      <CourseNameMainHeader />
       <AllCoursesRankedByRating />
     </div>
   )

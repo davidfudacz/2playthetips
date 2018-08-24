@@ -1,6 +1,6 @@
 import React from 'react' 
 import { connect } from 'react-redux'
-import { CurrentCourseRatings } from './components'
+import { SelectedCourseRatings, AllCoursesRankedByRating } from './components'
 
 const sidebarStyle = {
   display: 'flex',
@@ -13,7 +13,8 @@ const sidebarStyle = {
 
 const Sidebar = () => (
   <div className="sidebar" style={ sidebarStyle }>
-    <CurrentCourseRatings />
+    <SelectedCourseRatings />
+    <AllCoursesRankedByRating />
   </div>
 )
 
