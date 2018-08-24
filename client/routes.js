@@ -3,7 +3,12 @@ import { connect } from 'react-redux'
 import { withRouter, Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Login, Signup, Home } from './components'
-import { me, getAllCourseRatingsFromServerThunkerator, getSelectedCourseFromApiThunkerator } from './store'
+import {
+  me,
+  getAllCourseRatingsFromServerThunkerator,
+  getSelectedCourseFromClubbApiThunkerator,
+  getSelectedCourseBuildsFromClubbApiThunkerator,
+} from './store'
 
 /**
  * COMPONENT
@@ -50,7 +55,8 @@ const mapDispatch = dispatch => {
     loadInitialData() {
       dispatch(me())
       dispatch(getAllCourseRatingsFromServerThunkerator())
-      dispatch(getSelectedCourseFromApiThunkerator(1))
+      dispatch(getSelectedCourseFromClubbApiThunkerator(1))
+      dispatch(getSelectedCourseBuildsFromClubbApiThunkerator(1))
     }
   }
 }
