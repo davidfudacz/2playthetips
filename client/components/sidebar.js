@@ -1,6 +1,6 @@
 import React from 'react' 
 import { connect } from 'react-redux'
-import { SelectedCourseRatings, AllCoursesRankedByRating } from './components'
+import { SelectedCourseRatings, AllCoursesRankedByRating } from '.'
 
 const sidebarStyle = {
   display: 'flex',

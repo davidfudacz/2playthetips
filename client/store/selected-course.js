@@ -11,9 +11,7 @@ const getSelectedCourseFromApi = course => ({
 export const getSelectedCourseFromApiThunkerator = (clubbCourseId) => 
   async dispatch => {
     try {
-      console.log('id', clubbUrl)
       const course = await axios.get(`${clubbUrl}/api/courses/${clubbCourseId}?include=club,some,thing`)
-      console.log('course', course)
       dispatch(getSelectedCourseFromApi(course.data))
     }
     catch (err) {

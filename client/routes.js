@@ -10,7 +10,6 @@ import { me, getAllCourseRatingsFromServerThunkerator, getSelectedCourseFromApiT
  */
 class Routes extends Component {
   componentDidMount() {
-    console.log('mount')
     this.props.loadInitialData()
   }
 

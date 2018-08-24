@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { AllCoursesRankedByRating, CourseNameMainHeader } from '../components'
 
-const mainPanelStyle = {
+const mainColumnStyle = {
   display: 'flex',
   flexDirection: 'column',
   flex: '2.5',
@@ -17,7 +17,7 @@ const mainPanelStyle = {
 export const Home = () => {
 
   return (
-    <div className="mainPanel" style={ mainPanelStyle }>
+    <div className="mainColumn" style={ mainColumnStyle }>
       <CourseNameMainHeader />
       <AllCoursesRankedByRating />
     </div>
