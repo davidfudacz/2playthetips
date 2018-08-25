@@ -18,6 +18,9 @@ const Review = db.define('review',{
     type: Sequelize.TEXT,
     allowNull: false,
   },
+  datePosted: {
+    type: Sequelize.DATEONLY,
+  }
 })
 
 module.exports = Review

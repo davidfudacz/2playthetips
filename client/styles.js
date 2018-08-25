@@ -1,5 +1,6 @@
 export const primaryColor = 'gray'
 export const secondaryColor = 'white'
+export const viewWidth = '85vw'
 
 export const flexBoxJustifiedAndAlignedCenter = {
   display: 'flex',

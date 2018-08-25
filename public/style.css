@@ -27,3 +27,7 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+.reviewContent p {
+  text-indent: 15px;
+}

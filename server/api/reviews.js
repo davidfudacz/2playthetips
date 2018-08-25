@@ -1,7 +1,5 @@
 const router = require('express').Router()
 const { Review } = require('../db/models')
-const axios = require('axios')
-const { clubbUrl } = require('../urls')
 
 router.param('id', async (req, res, next, id) => {
   try {
@@ -24,7 +22,6 @@ router.get('/', async (req, res, next) => {
     })
     // in the event that there is more than one published, take the newer one
     reviews.sort((a, b) => b.updatedAt - a.updatedAt)
-    console.log(reviews[0])
     res.json(reviews[0])
   }
   else next()
@@ -32,7 +29,6 @@ router.get('/', async (req, res, next) => {
 
 router.get('/', async (req, res, next) => {
   try {
-    console.log('i hit')
     const reviews = await Review.findAll()
 
     res.json(reviews)

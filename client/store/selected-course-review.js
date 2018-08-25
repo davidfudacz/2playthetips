@@ -15,7 +15,7 @@ export const getSelectedCourseReviewFromServerThunkerator = (clubbCourseId) =>
       dispatch(getSelectedCourseReviewFromServer(courseReview.data))
     }
     catch (err) {
-      console.error(err)
+      console.log(err)
     }
   }
 

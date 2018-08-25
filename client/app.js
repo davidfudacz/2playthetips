@@ -3,11 +3,12 @@ import React from 'react'
 import { Navbar, Sidebar } from './components'
 import Routes from './routes'
 
+import { viewWidth } from './styles'
+
 const contentWrapperStyle = {
   display: 'flex',
   flexDirection: 'row',
-  width: '80vw',
-  alignItems: 'center',
+  width: viewWidth,
 }
 
 const App = () => {

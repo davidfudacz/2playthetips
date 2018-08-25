@@ -13,7 +13,7 @@ const style = {
 
 const MainRating = ({ courseRating, rank }) => (
   <div>
-    <Link to={_parseCourseUrl(courseRating.course)}>
+    <Link to={_parseCourseUrl(courseRating.course)} style={{ textDecoration: 'none', color: 'darkblue' }}>
       {rank} - {_parseCourseNameForDisplay(courseRating.course)} - {courseRating.total}
     </Link>
   </div>

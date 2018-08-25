@@ -15,7 +15,7 @@ export const getSelectedCourseBuildsFromClubbApiThunkerator = (clubbCourseId) =>
       dispatch(getSelectedCourseBuildsFromClubbApi(courseBuilds.data))
     }
     catch (err) {
-      console.error(err)
+      console.log(err)
     }
   }
 

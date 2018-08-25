@@ -16,11 +16,6 @@ const style = {
   alignItems: 'center',
 }
 
-const headerWrapper = {
-  display: 'flex',
-  flexDirection: 'column',
-}
-
 const headerStyle = {
   fontSize: '2rem',
   fontWeight: 'bold',
@@ -39,7 +34,7 @@ const CourseNameMainHeader = ({ selectedCourse, selectedCourseBuilds }) => {
   if (!selectedCourse.id) return null
   return (
     <div style={ style }>
-      <div className="courseNameHeaderWrapper" style={ headerWrapper }>
+      <div className="courseNameHeaderWrapper" >
         <div className="courseNameHeader" style={ headerStyle }>
           {_parseCourseNameForDisplay(selectedCourse)}
         </div>
