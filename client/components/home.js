@@ -1,12 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { AllCoursesRankedByRating, CourseNameMainHeader } from '../components'
+import { CourseNameMainHeader, ReviewMain } from '../components'
 
 const mainColumnStyle = {
-  display: 'flex',
-  flexDirection: 'column',
   flex: '2.5',
-  height: '800px',
   paddingTop: '20px',
   paddingRight: '10px',
 }
@@ -19,7 +16,7 @@ export const Home = () => {
   return (
     <div className="mainColumn" style={ mainColumnStyle }>
       <CourseNameMainHeader />
-      <AllCoursesRankedByRating />
+      <ReviewMain />
     </div>
   )
 }

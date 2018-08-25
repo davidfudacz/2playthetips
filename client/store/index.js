@@ -7,6 +7,7 @@ import courses from './courses'
 import courseRatings from './course-ratings'
 import selectedCourse from './selected-course'
 import selectedCourseBuilds from './selected-course-builds'
+import selectedCourseReview from './selected-course-review'
 
 const reducer = combineReducers({
   user,
@@ -14,6 +15,7 @@ const reducer = combineReducers({
   courseRatings,
   selectedCourse,
   selectedCourseBuilds,
+  selectedCourseReview,
 })
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
@@ -26,3 +28,4 @@ export * from './courses'
 export * from './course-ratings'
 export * from './selected-course'
 export * from './selected-course-builds'
+export * from './selected-course-review'

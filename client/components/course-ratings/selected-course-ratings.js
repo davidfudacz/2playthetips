@@ -15,6 +15,7 @@ const style = {
 const SelectedCourseRatings = ({ courseRatings, selectedCourse }) => {
   if (!courseRatings.length) return null
   const selectedCourseRatings = courseRatings.find(ratings => ratings.clubbCourseId === selectedCourse.id)
+  if (!selectedCourseRatings) return null
   return (
     <div style={ style }>
       <div>Shot Playability: {selectedCourseRatings.shot}</div>

@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const courseRating = db.define('courseRating',{
+const CourseRating = db.define('courseRating',{
   clubbCourseId: {
     type: Sequelize.INTEGER,
     allowNull: false,
@@ -103,4 +103,4 @@ const courseRating = db.define('courseRating',{
   },
 })
 
-module.exports = courseRating
+module.exports = CourseRating

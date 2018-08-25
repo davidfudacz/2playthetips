@@ -11,11 +11,11 @@ const getSelectedCourseFromClubbApi = course => ({
 export const getSelectedCourseFromClubbApiThunkerator = (clubbCourseId) => 
   async dispatch => {
     try {
-      const course = await axios.get(`${clubbUrl}/api/courses/${clubbCourseId}?include=club,some,thing`)
+      const course = await axios.get(`${clubbUrl}/api/courses/${clubbCourseId}?include=club`)
       dispatch(getSelectedCourseFromClubbApi(course.data))
     }
     catch (err) {
-      console.error(err)
+      console.log(err)
     }
   }
 
