@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const lowScore = db.define('lowScore',{
+const LowScore = db.define('lowScore',{
   clubbCourseId: {
     type: Sequelize.INTEGER,
     allowNull: false,
@@ -12,4 +12,4 @@ const lowScore = db.define('lowScore',{
   }
 })
 
-module.exports = lowScore
+module.exports = LowScore

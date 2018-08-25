@@ -1,11 +1,11 @@
 const router = require('express').Router()
-const { courseRating } = require('../db/models')
+const { CourseRating } = require('../db/models')
 const axios = require('axios')
 const { clubbUrl } = require('../urls')
 
 router.get('/', async (req, res, next) => {
   try {
-    const courseRatings = await courseRating.findAll()
+    const courseRatings = await CourseRating.findAll()
     const outputCourseRatings = await courseRatings.map(async rating => {
       try {
         const courseInfo = await axios.get(`${clubbUrl}/api/courses/${rating.clubbCourseId}?include=club`)

@@ -1,17 +1,22 @@
 const User = require('./user')
-const courseRating = require('./course-rating')
-const lowScore = require('./low-score')
-const playedCourse = require('./played-course')
+const CourseRating = require('./course-rating')
+const LowScore = require('./low-score')
+const PlayedCourse = require('./played-course')
+const Review = require('./review')
 
-playedCourse.belongsTo(User)
-User.hasMany(playedCourse)
+PlayedCourse.belongsTo(User)
+User.hasMany(PlayedCourse)
 
-lowScore.belongsTo(User)
-User.hasMany(lowScore)
+LowScore.belongsTo(User)
+User.hasMany(LowScore)
+
+Review.belongsTo(User)
+User.hasMany(Review)
 
 module.exports = {
   User,
-  playedCourse,
-  lowScore,
-  courseRating,
+  PlayedCourse,
+  LowScore,
+  CourseRating,
+  Review,
 }

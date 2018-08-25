@@ -44,7 +44,7 @@ const CourseNameMainHeader = ({ selectedCourse, selectedCourseBuilds }) => {
           {_parseCourseNameForDisplay(selectedCourse)}
         </div>
         <div className="courseNameHeaderSubtext" style={ headerSubtextStyle }>
-          Chicago, IL - Private
+          Chicago, IL (USA) - Private
         </div> 
       </div>
         <CourseNameMainHeaderBuildInfo builds={selectedCourseBuilds} />

@@ -1,9 +1,9 @@
 
-const { courseRating } = require('../../server/db/models')
+const { CourseRating } = require('../../server/db/models')
 
 const seedCourseRatings = async () => {
   const courseRatings = await Promise.all([
-    courseRating.create({
+    CourseRating.create({
       clubbCourseId: 1,
       shot: 4,
       short: 4,
@@ -14,7 +14,7 @@ const seedCourseRatings = async () => {
       design: 6,
       assKick: 10,
     }),
-    courseRating.create({
+    CourseRating.create({
       clubbCourseId: 2,
       shot: 8,
       short: 8,
