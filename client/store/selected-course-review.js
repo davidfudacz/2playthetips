@@ -11,7 +11,7 @@ const getSelectedCourseReviewFromServer = courseReview => ({
 export const getSelectedCourseReviewFromServerThunkerator = (clubbCourseId) => 
   async dispatch => {
     try {
-      const courseReview = await axios.get(`/api/reviews/${clubbCourseId}/builds`)
+      const courseReview = await axios.get(`/api/reviews?clubbCourseId=${clubbCourseId}&status=published`)
       dispatch(getSelectedCourseReviewFromServer(courseReview.data))
     }
     catch (err) {
@@ -19,7 +19,7 @@ export const getSelectedCourseReviewFromServerThunkerator = (clubbCourseId) =>
     }
   }
 
-export default (prevState = [], action) => {
+export default (prevState = {}, action) => {
   switch (action.type) {
     case GET_SELECTED_COURSE_REVIEW_FROM_SERVER:
       return action.courseReview

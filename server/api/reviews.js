@@ -14,8 +14,27 @@ router.param('id', async (req, res, next, id) => {
 })
 
 router.get('/', async (req, res, next) => {
+  const { clubbCourseId, status } = req.query
+  if (clubbCourseId && status) {
+    const reviews = await Review.findAll({
+      where: {
+        clubbCourseId,
+        status,
+      }
+    })
+    // in the event that there is more than one published, take the newer one
+    reviews.sort((a, b) => b.updatedAt - a.updatedAt)
+    console.log(reviews[0])
+    res.json(reviews[0])
+  }
+  else next()
+})
+
+router.get('/', async (req, res, next) => {
   try {
+    console.log('i hit')
     const reviews = await Review.findAll()
+
     res.json(reviews)
   }
   catch (err) {
@@ -23,7 +42,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', (req, res, next) => {
   res.json(req.review)
 })
 
