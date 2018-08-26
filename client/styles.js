@@ -17,4 +17,5 @@ export const defaultBorder = {
   background: secondaryColor,
   marginBottom: '20px',
   borderRadius: '3px',
+  padding: '15px',
 }

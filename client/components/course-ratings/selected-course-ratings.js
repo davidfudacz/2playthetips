@@ -3,11 +3,40 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { defaultBorder } from '../../styles'
+import { _parseCourseNameForDisplay } from '../../utilities';
 
 const style = {
   ...defaultBorder,
-  padding: '10px',
 }
+
+const ratingWrapper = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  marginTop: '1px',
+  marginBottom: '2px',
+}
+
+const ratingNameStyle = {
+
+}
+
+const ratingStyle = {
+
+}
+
+const ratingsHeaderStyle = {
+  fontSize: '1rem',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  marginBottom: '10px',
+}
+
+const IndividualRating = ({name, rating}) => (
+  <div style={ ratingWrapper }>
+    <div style={ ratingNameStyle }>{`${name}:`}</div>
+    <div style={ ratingStyle }>{rating}</div>
+  </div>
+)
 
 /**
  * COMPONENT
@@ -16,17 +45,32 @@ const SelectedCourseRatings = ({ courseRatings, selectedCourse }) => {
   if (!courseRatings.length) return null
   const selectedCourseRatings = courseRatings.find(ratings => ratings.clubbCourseId === selectedCourse.id)
   if (!selectedCourseRatings) return null
+  const {
+    shot,
+    short,
+    fairness,
+    experience,
+    aura,
+    omg,
+    design,
+    total,
+    assKick,
+  } = selectedCourseRatings
   return (
     <div style={ style }>
-      <div>Shot Playability: {selectedCourseRatings.shot}</div>
-      <div>Short Game Playability: {selectedCourseRatings.short}</div>
-      <div>Fairness: {selectedCourseRatings.fairness}</div>
-      <div>Experience: {selectedCourseRatings.experience}</div>
-      <div>Aura: {selectedCourseRatings.aura}</div>
-      <div>OMG Factor: {selectedCourseRatings.omg}</div>
-      <div>Design: {selectedCourseRatings.design}</div>
-      <div>Total: {selectedCourseRatings.total}</div>
-      <div>Ass-Kick Factor: {selectedCourseRatings.assKick}</div>
+      <div style={ ratingsHeaderStyle }>Our Ratings for {_parseCourseNameForDisplay(selectedCourse, true)}</div>
+      <IndividualRating name='Shot Playability' rating={shot} />
+      <IndividualRating name='Short Game Playability' rating={short} />
+      <IndividualRating name='Fairness' rating={fairness} />
+      <IndividualRating name='Experience' rating={experience} />
+      <IndividualRating name='Aura' rating={aura} />
+      <IndividualRating name='OMG Factor' rating={omg} />
+      <IndividualRating name='Design' rating={design} />
+      <div style={ ratingWrapper }>
+        <div style={{ ...ratingNameStyle, fontWeight: 'bold' }}>Total:</div>
+        <div style={{ ...ratingStyle, fontWeight: 'bold' }}>{total}</div>
+      </div>
+      <IndividualRating name='Ass-Kick Factor' rating={assKick} />
     </div>
   )
 }
