@@ -35,14 +35,17 @@ const MainRating = ({ courseRating, rank }) => (
 /**
  * COMPONENT
  */
-const AllCoursesRankedByRating = ({ courseRatings }) => (
-  <div style={ style }>
-    <div style={ranksHeaderStyle}>Our Ranks</div>
-    {
-      _sortRatingsByTotal(courseRatings).map((courseRating, index) => <MainRating key={courseRating.id} courseRating={courseRating} rank={index + 1} />)
-    }
-  </div>
-)
+const AllCoursesRankedByRating = ({ courseRatings }) => {
+  if (!courseRatings.length) return null
+  return (
+    <div style={ style }>
+      <div style={ranksHeaderStyle}>Our Ranks</div>
+      {
+        _sortRatingsByTotal(courseRatings).map((courseRating, index) => <MainRating key={courseRating.id} courseRating={courseRating} rank={index + 1} />)
+      }
+    </div>
+  )
+}
 
 
 const mapState = ({ courseRatings }) => ({ courseRatings })
