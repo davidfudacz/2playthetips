@@ -8,15 +8,28 @@ import { defaultBorder } from '../../styles'
 
 const style = {
   ...defaultBorder,
-  padding: '10px',
+}
+
+const mainRatingStyle = {
+  textDecoration: 'none',
+  color: 'darkblue',
+  display: 'flex',
+  justifyContent: 'space-between',
+  marginBottom: '3px'
+}
+
+const ranksHeaderStyle = {
+  fontSize: '1rem',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  marginBottom: '10px',
 }
 
 const MainRating = ({ courseRating, rank }) => (
-  <div>
-    <Link to={_parseCourseUrl(courseRating.course)} style={{ textDecoration: 'none', color: 'darkblue' }}>
-      {rank} - {_parseCourseNameForDisplay(courseRating.course)} - {courseRating.total}
-    </Link>
-  </div>
+  <Link to={_parseCourseUrl(courseRating.course)} style={ mainRatingStyle }>
+    <div>{rank} - {_parseCourseNameForDisplay(courseRating.course)}</div>
+    <div>{courseRating.total}</div>
+  </Link>
 )
 
 /**
@@ -24,6 +37,7 @@ const MainRating = ({ courseRating, rank }) => (
  */
 const AllCoursesRankedByRating = ({ courseRatings }) => (
   <div style={ style }>
+    <div style={ranksHeaderStyle}>Our Ranks</div>
     {
       _sortRatingsByTotal(courseRatings).map((courseRating, index) => <MainRating key={courseRating.id} courseRating={courseRating} rank={index + 1} />)
     }

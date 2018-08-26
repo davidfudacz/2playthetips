@@ -7,7 +7,6 @@ import { defaultBorder, primaryColor } from '../../styles'
 
 const style = {
   ...defaultBorder,
-  padding: '10px',
   // display: 'flex',
   // flexDirection: 'row',
   // justifyContent: 'space-between',

@@ -8,7 +8,6 @@ import { _parseCourseNameForDisplay } from '../../utilities';
 
 const style = {
   ...defaultBorder,
-  padding: '10px',
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',
