@@ -1,4 +1,5 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux'
+import { responsiveStateReducer, responsiveStoreEnhancer } from 'redux-responsive'
 import createLogger from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
@@ -16,8 +17,10 @@ const reducer = combineReducers({
   selectedCourse,
   selectedCourseBuilds,
   selectedCourseReview,
+  browser: responsiveStateReducer,
 })
 const middleware = composeWithDevTools(
+  responsiveStoreEnhancer,
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )
 const store = createStore(reducer, middleware)
