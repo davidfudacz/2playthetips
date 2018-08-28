@@ -20,6 +20,11 @@ const Review = db.define('review',{
   },
   datePosted: {
     type: Sequelize.DATEONLY,
+  },
+  imgUrl: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    allowEmpty: false,
   }
 })
 

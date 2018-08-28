@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { CourseNameMainHeader, ReviewMain } from '../components'
+import { CourseNameMainHeader, ReviewMain, ImageGallery } from '.'
 
 const mainColumnStyle = {
   flex: '2.5',
@@ -16,6 +16,7 @@ export const Home = () => {
   return (
     <div className="mainColumn" style={ mainColumnStyle }>
       <CourseNameMainHeader />
+      <ImageGallery />
       <ReviewMain />
     </div>
   )
