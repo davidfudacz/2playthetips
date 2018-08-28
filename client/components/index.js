@@ -6,6 +6,7 @@
 export { Navbar } from './navbar'
 export { default as Home } from './home'
 export { default as Sidebar } from './sidebar'
+export { default as ImageGallery } from './image-gallery'
 export * from './auth-form'
 export * from './course-ratings'
 export * from './course-info'
