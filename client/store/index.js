@@ -9,6 +9,7 @@ import courseRatings from './course-ratings'
 import selectedCourse from './selected-course'
 import selectedCourseBuilds from './selected-course-builds'
 import selectedCourseReview from './selected-course-review'
+import selectedCourseScorecards from './selected-course-scorecards'
 
 const reducer = combineReducers({
   user,
@@ -17,6 +18,7 @@ const reducer = combineReducers({
   selectedCourse,
   selectedCourseBuilds,
   selectedCourseReview,
+  selectedCourseScorecards,
   browser: responsiveStateReducer,
 })
 const middleware = composeWithDevTools(
@@ -32,3 +34,4 @@ export * from './course-ratings'
 export * from './selected-course'
 export * from './selected-course-builds'
 export * from './selected-course-review'
+export * from './selected-course-scorecards'
