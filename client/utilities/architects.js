@@ -24,10 +24,10 @@ export const _parseMultipleArchitectNames = (architects, onlyLastNames) => {
   }
   const sortedArchitects = _sortArchitectsAlphabetically(architects)
   const architectsParsedArr = sortedArchitects.map(architect => _parseArchitectName(architect, onlyLastNames))
-  if (architects.length === 2) {
-    return architectsParsedArr.join(' & ')
-  }
-  if (architects.length > 2) {
+  // if (architects.length === 2) {
+  //   return architectsParsedArr.join(' & ')
+  // }  // this should still work without this conditional
+  if (architects.length >= 2) {
     const removedLastArchitect = architectsParsedArr.pop()
     return architectsParsedArr.join(', ') + ` & ${removedLastArchitect}`
   }
