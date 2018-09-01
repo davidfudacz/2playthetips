@@ -1,39 +1,21 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import ReactImageGallery from 'react-image-gallery'
 import { defaultBorder } from '../styles';
 
+const headerStyle = {
+  fontSize: '1rem',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  marginBottom: '10px',
+}
 
-
-const ImageGallery = ({images}) => (
-  <div style={defaultBorder}>
-    <ReactImageGallery items={images} autoPlay={true} />
+const ImageGallery = ({ images, header }) => (
+  <div style={ defaultBorder }>
+    {
+      header ? <div style={headerStyle}>{ header }</div> : null
+    }
+    <ReactImageGallery items={ images } autoPlay={ true } />
   </div>
 )
 
-const mapState = () => ({
-  images: [
-    {
-      original: 'http://www.2playthetips.com/images/Riviera/DSC_0002.jpg',
-      thumbnail: 'http://www.2playthetips.com/images/Riviera/DSC_0002.jpg',
-    },
-    {
-      original: 'http://www.2playthetips.com/images/Riviera/DSC_0005.jpg',
-      thumbnail: 'http://www.2playthetips.com/images/Riviera/DSC_0005.jpg'
-    },
-    {
-      original: 'http://www.2playthetips.com/images/Riviera/DSC_0007.jpg',
-      thumbnail: 'http://www.2playthetips.com/images/Riviera/DSC_0007.jpg'
-    },
-    {
-      original: 'http://www.2playthetips.com/images/Riviera/DSC_0010.jpg',
-      thumbnail: 'http://www.2playthetips.com/images/Riviera/DSC_0010.jpg'
-    },
-    {
-      original: 'http://www.2playthetips.com/images/Riviera/DSC_0013.jpg',
-      thumbnail: 'http://www.2playthetips.com/images/Riviera/DSC_0013.jpg'
-    }
-  ]
-})
-
-export default connect(mapState, null)(ImageGallery)
+export default ImageGallery

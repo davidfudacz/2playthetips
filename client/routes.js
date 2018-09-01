@@ -9,6 +9,7 @@ import {
   getSelectedCourseFromClubbApiThunkerator,
   getSelectedCourseBuildsFromClubbApiThunkerator,
   getSelectedCourseReviewFromServerThunkerator,
+  getSelectedCourseScorecardsFromClubbApiThunkerator,
 } from './store'
 
 /**
@@ -59,6 +60,7 @@ const mapDispatch = dispatch => {
       dispatch(getSelectedCourseFromClubbApiThunkerator(1))
       dispatch(getSelectedCourseBuildsFromClubbApiThunkerator(1))
       dispatch(getSelectedCourseReviewFromServerThunkerator(1))
+      dispatch(getSelectedCourseScorecardsFromClubbApiThunkerator(1))
     }
   }
 }
