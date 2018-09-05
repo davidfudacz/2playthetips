@@ -32,7 +32,6 @@ const dateStampStyle = {
 
 const ReviewMain = ({ selectedCourseReview }) => {
   if (!selectedCourseReview.id) return null
-  console.log(_parseDatePosted(selectedCourseReview.datePosted))
   return (
     <div style={ style }>
       <div style={ dateStampStyle }>2 Play the Tips posted this review on {_parseDatePosted(selectedCourseReview.datePosted)}</div>
