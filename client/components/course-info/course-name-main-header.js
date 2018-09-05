@@ -28,7 +28,7 @@ const headerSubtextStyle = {
 /**
  * COMPONENT
  */
-const CourseNameMainHeader = ({ selectedCourse, selectedCourseBuilds, browser }) => {
+const CourseNameMainHeader = ({ selectedCourse, selectedCourseBuilds, browser, selectedCourseMembershipType }) => {
   if (!selectedCourse.id) return null
 
   let style = mainStyle
@@ -43,7 +43,7 @@ const CourseNameMainHeader = ({ selectedCourse, selectedCourseBuilds, browser })
           {_parseCourseNameForDisplay(selectedCourse)}
         </div>
         <div className="courseNameHeaderSubtext" style={ headerSubtextStyle }>
-          Chicago, IL (USA) - Private
+          Chicago, IL (USA) - { selectedCourseMembershipType.name }
         </div> 
       </div>
         <CourseNameMainHeaderBuildInfo builds={ selectedCourseBuilds } browser={ browser } />
@@ -52,7 +52,9 @@ const CourseNameMainHeader = ({ selectedCourse, selectedCourseBuilds, browser })
 }
 
 
-const mapState = ({ selectedCourse, selectedCourseBuilds, browser }) => ({ selectedCourse, selectedCourseBuilds, browser })
+const mapState =
+  ({ selectedCourse, selectedCourseBuilds, browser, selectedCourseMembershipType }) =>
+  ({ selectedCourse, selectedCourseBuilds, browser, selectedCourseMembershipType })
 
 export default connect(mapState)(CourseNameMainHeader)
 

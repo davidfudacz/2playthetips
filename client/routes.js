@@ -10,6 +10,7 @@ import {
   getSelectedCourseBuildsFromClubbApiThunkerator,
   getSelectedCourseReviewFromServerThunkerator,
   getSelectedCourseScorecardsFromClubbApiThunkerator,
+  getSelectedCourseMembershipTypeFromClubbApiThunkerator,
 } from './store'
 
 /**
@@ -34,7 +35,6 @@ class Routes extends Component {
             <Route path="/admin" component={Home} />
           </Switch>
         )}
-        {/* Displays our Login component as a fallback */}
         <Route component={Home} />
       </Switch>
     )
@@ -61,6 +61,7 @@ const mapDispatch = dispatch => {
       dispatch(getSelectedCourseBuildsFromClubbApiThunkerator(1))
       dispatch(getSelectedCourseReviewFromServerThunkerator(1))
       dispatch(getSelectedCourseScorecardsFromClubbApiThunkerator(1))
+      dispatch(getSelectedCourseMembershipTypeFromClubbApiThunkerator(1))
     }
   }
 }

@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { clubbUrl } from '../urls'
 
 const GET_SELECTED_COURSE_REVIEW_FROM_SERVER = 'GET_SELECTED_COURSE_REVIEW_FROM_SERVER'
 

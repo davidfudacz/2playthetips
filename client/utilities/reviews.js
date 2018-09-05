@@ -6,6 +6,5 @@ export const _parseDatePosted = (date) => {
   const year = splitDate[0]
   const month = parseInt(splitDate[1], 10)
   const day = parseInt(splitDate[2], 10)
-  console.log(year, month, day)
   return `${MONTHS[month-1]} ${day}, ${year}`
 }
