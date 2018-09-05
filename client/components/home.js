@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { CourseNameMainHeader, ReviewMain, ImageGallery } from '.'
+import { CourseNameMainHeader, ReviewMain, ImageGallery, AllReviewsList } from '.'
 import { ScorecardsViewer } from './course-info';
 
 const mainColumnStyle = {
@@ -39,6 +39,7 @@ export const Home = ({ selectedCourseScorecards }) => {
 
   return (
     <div className="mainColumn" style={ mainColumnStyle }>
+      <AllReviewsList />
       <CourseNameMainHeader />
       <ImageGallery images={ images }/>
       <ReviewMain />

@@ -13,7 +13,7 @@ router.get('/', async (req, res, next) => {
         return rating
       }
       catch (err) {
-        console.error(err)
+        next(err)
       }
 
     })
@@ -21,7 +21,7 @@ router.get('/', async (req, res, next) => {
     res.json(output)
   }
   catch (err) {
-    console.error(err)
+    next(err)
   }
 })
 
