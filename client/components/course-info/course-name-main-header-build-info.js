@@ -13,13 +13,23 @@ const courseInfoStyle = {
   fontSize: '.8rem',
 }
 
-const CourseNameMainHeaderBuildInfo = ({ builds }) => (
-  <div className="courseInfo" style={ courseInfoStyle }>
-    {
-      _sortBuildsByYear(builds).map(build => <div style={{ marginBottom: '2px' }} key={build.id}>{_parseBuildWordingForDisplay(build, true)}</div>)
-    }
-  </div>
-)
+const CourseNameMainHeaderBuildInfo = ({ builds, browser }) => {
+  let style = courseInfoStyle
+  if (browser.lessThan.medium) {
+    style = { ...courseInfoStyle, alignItems: 'flex-start', marginTop: '10px' }
+  }
+  return (
+    <div className="courseInfo" style={ style }>
+      {
+        _sortBuildsByYear(builds).map(build =>
+          <div style={{ marginBottom: '2px' }} key={build.id}>
+            {_parseBuildWordingForDisplay(build, browser.lessThan.large)}
+          </div>
+        )
+      }
+    </div>
+  )
+}
 
 export default CourseNameMainHeaderBuildInfo
 

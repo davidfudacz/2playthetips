@@ -6,12 +6,11 @@ import CourseNameMainHeaderBuildInfo from './course-name-main-header-build-info'
 import { defaultBorder, primaryColor } from '../../styles'
 import { _parseCourseNameForDisplay } from '../../utilities';
 
-const style = {
+let mainStyle = {
   ...defaultBorder,
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',
-  flexWrap: 'wrap',
   alignItems: 'center',
 }
 
@@ -29,8 +28,14 @@ const headerSubtextStyle = {
 /**
  * COMPONENT
  */
-const CourseNameMainHeader = ({ selectedCourse, selectedCourseBuilds }) => {
+const CourseNameMainHeader = ({ selectedCourse, selectedCourseBuilds, browser }) => {
   if (!selectedCourse.id) return null
+
+  let style = mainStyle
+  if (browser.lessThan.medium) {
+    style = { ...mainStyle, flexDirection: 'column', alignItems: 'flex-start' }
+  }
+  
   return (
     <div style={ style }>
       <div className="courseNameHeaderWrapper" >
@@ -41,13 +46,13 @@ const CourseNameMainHeader = ({ selectedCourse, selectedCourseBuilds }) => {
           Chicago, IL (USA) - Private
         </div> 
       </div>
-        <CourseNameMainHeaderBuildInfo builds={selectedCourseBuilds} />
+        <CourseNameMainHeaderBuildInfo builds={ selectedCourseBuilds } browser={ browser } />
     </div>
   )
 }
 
 
-const mapState = ({ selectedCourse, selectedCourseBuilds }) => ({ selectedCourse, selectedCourseBuilds })
+const mapState = ({ selectedCourse, selectedCourseBuilds, browser }) => ({ selectedCourse, selectedCourseBuilds, browser })
 
 export default connect(mapState)(CourseNameMainHeader)
 
