@@ -27,18 +27,18 @@ const dateStampStyle = {
   fontSize: '.8rem',
   fontStyle: 'italic',
   color: primaryColor,
-  marginBottom: '15px',
+  marginBottom: '10px',
 }
 
 const ReviewListItem = ({ review }) => (
-  <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start' }}>
-    <div style={{ maxHeight: '300px', overflow: 'hidden', marginBottom: '15px', borderBottom: `1px solid ${primaryColor}`, flex: '1.5' }}>
+  <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', marginBottom: '15px', paddingBottom: '15px', borderBottom: `1px solid ${primaryColor}`, }}>
+    <div style={{ maxHeight: '225px', textOverflow: 'hidden', overflow: 'hidden', flex: '1', whiteSpace: 'no-wrap' }}>
+      <h2 style={{ margin: '0 0 3px 0' }}>{ _parseCourseNameForDisplay(review.course) }</h2>
       <div style={ dateStampStyle }>2 Play the Tips posted this review on {_parseDatePosted(review.datePosted)}</div>
-      <h2>{ _parseCourseNameForDisplay(review.course) }</h2>
-      <h3>{ review.title }</h3>
+      <h4 style={{ margin: '0 0 3px 0' }}>{ review.title }</h4>
       <div className="reviewContent" dangerouslySetInnerHTML={{ __html: review.content }} />
     </div>
-      <img style={{ width: '50%', objectFit: 'contain' }} src={ review.imgUrl } />
+      <img style={{ height: '225px', objectFit: 'contain', marginLeft: '15px' }} src={ review.imgUrl } />
   </div>
 )
 
