@@ -5,6 +5,7 @@ import thunkMiddleware from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import user from './user'
 import courses from './courses'
+import reviews from './reviews'
 import courseRatings from './course-ratings'
 import selectedCourse from './selected-course'
 import selectedCourseBuilds from './selected-course-builds'
@@ -15,6 +16,7 @@ import selectedCourseMembershipType from './selected-course-membership-type'
 const reducer = combineReducers({
   user,
   courses,
+  reviews,
   courseRatings,
   selectedCourse,
   selectedCourseBuilds,
@@ -32,6 +34,7 @@ const store = createStore(reducer, middleware)
 export default store
 export * from './user'
 export * from './courses'
+export * from './reviews'
 export * from './course-ratings'
 export * from './selected-course'
 export * from './selected-course-builds'

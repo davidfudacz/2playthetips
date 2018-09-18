@@ -12,7 +12,6 @@ export const getAllCoursesFromClubbApiThunkerator = () =>
   async dispatch => {
     try {
       const courses = await axios.get(`${clubbUrl}/api/courses`)
-      console.log(courses)
       dispatch(getAllCoursesFromClubbApi(courses.data))
     }
     catch (err) {

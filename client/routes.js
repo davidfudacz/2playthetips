@@ -11,6 +11,7 @@ import {
   getSelectedCourseReviewFromServerThunkerator,
   getSelectedCourseScorecardsFromClubbApiThunkerator,
   getSelectedCourseMembershipTypeFromClubbApiThunkerator,
+  getAllReviewsFromServerThunkerator,
 } from './store'
 
 /**
@@ -57,11 +58,12 @@ const mapDispatch = dispatch => {
     loadInitialData() {
       dispatch(me())
       dispatch(getAllCourseRatingsFromServerThunkerator())
-      dispatch(getSelectedCourseFromClubbApiThunkerator(1))
-      dispatch(getSelectedCourseBuildsFromClubbApiThunkerator(1))
-      dispatch(getSelectedCourseReviewFromServerThunkerator(1))
-      dispatch(getSelectedCourseScorecardsFromClubbApiThunkerator(1))
-      dispatch(getSelectedCourseMembershipTypeFromClubbApiThunkerator(1))
+      dispatch(getSelectedCourseFromClubbApiThunkerator(2))
+      dispatch(getSelectedCourseBuildsFromClubbApiThunkerator(2))
+      dispatch(getSelectedCourseReviewFromServerThunkerator(2))
+      dispatch(getSelectedCourseScorecardsFromClubbApiThunkerator(2))
+      dispatch(getSelectedCourseMembershipTypeFromClubbApiThunkerator(2))
+      dispatch(getAllReviewsFromServerThunkerator())
     }
   }
 }
