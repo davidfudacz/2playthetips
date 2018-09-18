@@ -32,7 +32,7 @@ const dateStampStyle = {
 
 const ReviewListItem = ({ review }) => (
   <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', marginBottom: '15px', paddingBottom: '15px', borderBottom: `1px solid ${primaryColor}`, }}>
-    <div style={{ maxHeight: '225px', textOverflow: 'hidden', overflow: 'hidden', flex: '1', whiteSpace: 'no-wrap' }}>
+    <div className="reviewPreview" style={{ maxHeight: '225px', textOverflow: 'hidden', overflow: 'hidden', flex: '1', whiteSpace: 'no-wrap' }}>
       <h2 style={{ margin: '0 0 3px 0' }}>{ _parseCourseNameForDisplay(review.course) }</h2>
       <div style={ dateStampStyle }>2 Play the Tips posted this review on {_parseDatePosted(review.datePosted)}</div>
       <h4 style={{ margin: '0 0 3px 0' }}>{ review.title }</h4>
